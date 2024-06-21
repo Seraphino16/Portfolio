@@ -5,7 +5,7 @@ export default function Navbar() {
             <div className="hidden md:flex justify-between w-4/12 text-xl">
                 <a href="#">À propos</a>
                 <a href="#projects">Projets</a>
-                <a href="#">Contact</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     )

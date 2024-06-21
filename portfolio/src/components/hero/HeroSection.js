@@ -1,4 +1,7 @@
-import Image from "next/image"
+import Image from "next/image";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 
 function Description() {
     return(
@@ -13,6 +16,11 @@ function Description() {
                 alternance afin de contribuer à des projets innovants au sein d'une
                 équipe dynamique.
             </p>
+            <a href="/CV_BENOIT_Seraphin.pdf" download="CV_Benoit_Séraphin.pdf"
+             className="bg-slate-300 text-black hover:bg-slate-500 hover:text-white font-bold mt-6 lg:mt-16 py-2 px-4 rounded flex items-center">
+                <ArrowDownTrayIcon className="w-6 h-6 mr-2" />
+                <p>Télécharger mon CV</p>
+            </a>
         </div>
     )
 }
@@ -20,7 +28,7 @@ function Description() {
 export default function HeroSection() {
     return(
         <div className="w-full min-h-screen flex justify-center items-center py-4">
-            <div className="w-10/12 lg:w-8/12 bg-red-400 p-8 mt-8 flex flex-col lg:flex-row justify-center lg:justify-evenly items-center">
+            <div className="w-10/12 lg:w-8/12 bg-red-400 p-8 mt-8 flex flex-col lg:flex-row justify-center lg:justify-evenly items-center min-h-[36rem]">
                 <div className="relative w-6/12 sm:w-6/12 md:w-4/12 lg:p-4 aspect-square mb-4 md:mb-0 md:mr-4">
                     <Image
                         src='/photo_myself.png'
