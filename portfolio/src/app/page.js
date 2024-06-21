@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import HeroSection from "@/components/hero/HeroSection";
 import Navbar from "@/components/navbar/Navbar";
 import ProjectSection from "@/components/projects/ProjectSection";
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <ProjectSection />
+      <Footer />
     </>
   );
 }
