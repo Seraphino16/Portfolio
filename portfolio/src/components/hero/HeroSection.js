@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 
 function Description() {
@@ -9,12 +7,12 @@ function Description() {
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Séraphin Benoit</h1>
             <div className="h-2 w-6/12 bg-black rounded-md my-8"></div>
             <p className="text-center">
-                Actuellement étudiant à Epitech, je suis passionné par les nouvelles
+                {`Actuellement étudiant à Epitech, je suis passionné par les nouvelles
                 technologies et je suis spécialisé dans le web. Polyvalent, je m'adapte
                 aussi bien sur des technologies back-end que sur le développement
                 front-end. Motivé, curieux et aimant le travail d'équipe , je recherche une
                 alternance afin de contribuer à des projets innovants au sein d'une
-                équipe dynamique.
+                équipe dynamique.`}
             </p>
             <a href="/CV_BENOIT_Seraphin.pdf" download="CV_Benoit_Séraphin.pdf"
              className="bg-slate-300 text-black hover:bg-slate-500 hover:text-white font-bold mt-6 lg:mt-16 py-2 px-4 rounded flex items-center">
@@ -32,6 +30,7 @@ export default function HeroSection() {
                 <div className="relative w-6/12 sm:w-6/12 md:w-4/12 lg:p-4 aspect-square mb-4 md:mb-0 md:mr-4">
                     <Image
                         src='/photo_myself.png'
+                        alt='Portrait'
                         layout='fill'
                         className="object-contain hover:scale-105 transition-transform duration-300"
                     />

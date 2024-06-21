@@ -11,6 +11,7 @@ function Project({ project }) {
             <div className='max-w-2xl overflow-hidden relative'>
                 <Image
                     src={project.images[0]}
+                    alt={project.title}
                     objectFit='contain'
                     layout='responsive'
                     width={1000}
@@ -25,7 +26,7 @@ function Project({ project }) {
                     <h4>Compétences: </h4>
                     <ul className='list-disc ml-4'>
                         {project.skills.map((skill) => (
-                            <li>{skill}</li>
+                            <li key={skill}>{skill}</li>
                         ))}
                     </ul>
                 </div>
@@ -44,7 +45,7 @@ export default async function ProjectSection() {
             <h2 className="text-4xl">Projects</h2>
             <div className='block flex flex-col justify-center items-center md:flex-row  md:items-start'>
                 {data && data.map((project) => (
-                    <Project project={project} />
+                    <Project project={project} key={project.title}/>
                 ))}
             </div>
         </section>
