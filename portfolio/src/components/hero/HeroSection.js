@@ -16,14 +16,13 @@ export default function HeroSection() {
     return(
         <div className="w-full h-screen flex justify-center items-center md:-mt-28">
             <div className="w-10/12 lg:w-8/12 lg:h-4/6 bg-red-400 p-12 block lg:flex justify-evenly items-center">
-                <div className="w-8/12 sm:w-6/12 md:w-4/12 lg:p-4">
-                    <Image
-                        src='/photo_myself.png'
-                        width={1000}
-                        height={1000}
-                        className="mx-auto h-[20rem] w-[20rem] object-contain sm:w-80 sm:h-80 md:w-[16rem] md:h-[16rem] lg:w-[16rem] lg:h-[16rem] hover:scale-105 transition-transform duration-300"
-                    />
-                </div>
+            <div className="relative w-6/12 sm:w-6/12 md:w-4/12 lg:p-4 aspect-square mb-4 md:mb-0 md:mr-4">
+                <Image
+                    src='/photo_myself.png'
+                    layout='fill'
+                    className="object-contain hover:scale-105 transition-transform duration-300"
+                />
+            </div>
                 <Description />                
             </div>
         </div>

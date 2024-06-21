@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Battleship",
+        "description": "Le battleship est un projet de debug où l'on reçoit un projet cassé et nous devons le rendre fonctionnel",
+        "technologies": ["JavaScript", "HTML", "CSS"],
+        "images": [
+            "/img/battleship_01.png"
+        ]
+    },
+    {
+        "title": "Tweet Academy",
+        "description": "Le tweet Academy est un projet où l'on doit reproduire les principales fonctionalités de Tweeter, telles que la création d'un compte, la création de tweets et l'abonnement aux autres utilisateurs",
+        "technologies": ["PHP", "JavaScript", "Ajax"],
+        "images": [
+            "/img/tweeter_01.png"
+        ],
+        "skills": [
+            "Rédiger un cahier des charges",
+            "Réaliser une maquette",
+            "Identifier les fonctionalités à développer",
+            "Rédiger une présentation",
+            "Implémenter la partie \"front-end\"",
+            "Implémenter des règles d'authentification",
+            "Implémenter la logique et la base de données"
+        ]
+    }
+]
