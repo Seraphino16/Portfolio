@@ -19,7 +19,7 @@ function Description() {
 
 export default function HeroSection() {
     return(
-        <div className="w-full min-h-screen flex justify-center items-center">
+        <div className="w-full min-h-screen flex justify-center items-center py-4">
             <div className="w-10/12 lg:w-8/12 bg-red-400 p-8 mt-8 flex flex-col lg:flex-row justify-center lg:justify-evenly items-center">
                 <div className="relative w-6/12 sm:w-6/12 md:w-4/12 lg:p-4 aspect-square mb-4 md:mb-0 md:mr-4">
                     <Image
