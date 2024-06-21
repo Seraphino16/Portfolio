@@ -6,7 +6,7 @@ function Project({ project }) {
     const technos = project.technologies.join(', ');
 
     return(
-        <div className='p-2 m-4 rounded bg-violet-800 w-full md:max-w-2xl' >
+        <div className='p-2 my-4 md:mx-4 rounded bg-violet-800 w-full md:max-w-2xl' >
             <h3 className='text-2xl mb-4'>{project.title}</h3>
             <div className='max-w-2xl overflow-hidden relative'>
                 <Image
@@ -18,7 +18,7 @@ function Project({ project }) {
                     className='rounded'
                 />
             </div>
-            <p className='mt-4'>{project.description}</p>
+            <p className='my-4'>{project.description}</p>
             {technos && <p>Technologies: {technos}</p>}
             {project.skills && (
                 <div className='mt-4'>
@@ -42,7 +42,7 @@ export default async function ProjectSection() {
     return(
         <section id='projects' className="p-8 bg-sky-500 min-h-screen w-full">
             <h2 className="text-4xl">Projects</h2>
-            <div className='block lg:flex '>
+            <div className='block flex flex-col justify-center items-center md:flex-row  md:items-start'>
                 {data && data.map((project) => (
                     <Project project={project} />
                 ))}
