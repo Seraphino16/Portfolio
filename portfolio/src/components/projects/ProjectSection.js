@@ -40,7 +40,7 @@ export default async function ProjectSection() {
     const data = await JSON.parse(file);
 
     return(
-        <section className="p-8 bg-sky-500 min-h-screen w-full">
+        <section id='projects' className="p-8 bg-sky-500 min-h-screen w-full">
             <h2 className="text-4xl">Projects</h2>
             <div className='block lg:flex '>
                 {data && data.map((project) => (
