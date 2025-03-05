@@ -1,0 +1,14 @@
+:root {
+  $white: #F5F5F5;
+  $black: #1D1F21;
+
+  $primary-orange: #FF6600;
+  $secondary-orange: #FF983F;
+
+  $orange-gradient: linear-gradient(to bottom right, $primary-orange, $secondary-orange );
+
+  $primary-blue: #30CFD0;
+  $secondary-blue: #B8D8FF;
+
+  $blue-gradient: linear-gradient(to bottom right, $primary-blue, $secondary-blue);
+}

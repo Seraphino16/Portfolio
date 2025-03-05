@@ -1,0 +1,97 @@
+.title {
+  background-image: var(--orange-gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 4rem;
+  margin-top: 7vh;
+  padding: 2vh 0;
+}
+
+.presentation {
+  display: flex;
+  //flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  //padding: 58px 40px 60px 40px;
+  padding: 6vh 2vw;
+  gap: 5.5vh;
+
+  &Text {
+    &Main {
+      color: var(--gray);
+      font-size: 2.5rem;
+      padding: 10px;
+      margin-bottom: 10px;
+
+      &Name {
+        font-size: 3rem;
+      }
+
+    }
+    &Description {
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8vh;
+  padding: 2vh;
+}
+
+.chevrons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4vh 2vw;
+  gap: 10px;
+}
+
+@media (max-width: 800px) {
+  .presentation {
+    flex-direction: column;
+    padding: 2vh 1vw;
+    gap: 2vh;
+
+    &Image {
+      max-width: 20vh;
+    }
+  }
+
+  .buttons {
+    padding: 1vh;
+  }
+
+  .chevrons {
+    padding: 2vh 2vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .title {
+    margin-top: 5vh;
+    font-size: 3rem;
+  }
+
+  .presentation {
+    &Text {
+      &Main {
+        font-size: 2rem;
+
+        &Name {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 3vh;
+  }
+}
