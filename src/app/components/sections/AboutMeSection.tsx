@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../../styles/page.module.scss";
 import aboutSection from "../../styles/about.module.scss";
 import TechnoBox from "@/app/components/TechnoBox/TechnoBox";
+import CustomButton from "@/app/components/CustomButton/CustomButton";
 
 const AboutMeSection = () => {
 
@@ -27,6 +28,14 @@ const AboutMeSection = () => {
                         Lobortis nisl maecenas integer eros. Quis eu ornare ante lorem nunc egestas gravida fusce
                         ultricies. Senectus nunc volutpat vulputate tincidunt consequat massa interdum tempor
                         scelerisque. Nec duis eget ipsum faucibus feugiat iaculis dui ultrices.</p>
+                </div>
+                <div className={aboutSection.containerButtons}>
+                    <CustomButton text={'Télécharger mon CV'} type={'gradient'} icon={'/icons/User_02.svg'} alt={'Icône téléchargement'} />
+                    <div className={aboutSection.containerButtons}>
+                        <CustomButton text={'Github'} type={'gray'} icon={'/icons/User_02.svg'} alt={'Icône Github'} />
+                        <CustomButton text={'LinkedIn'} type={'gray'} icon={'/icons/User_02.svg'} alt={'Icône LinkedIn'} />
+                    </div>
+
                 </div>
             </div>
             <div className={aboutSection.container}>

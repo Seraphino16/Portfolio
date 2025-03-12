@@ -3,21 +3,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 6vh;
+  padding: 2vh 0 6vh 0;
 
   h2 {
     font-size: 3rem;
     margin-bottom: 4vw;
+    margin-top: 4vh;
   }
 
   &Box {
     background-image: var(--blue-gradient);
     padding: 4vh 6vw;
     border-radius: 50px 50px 4px 50px;
+    margin-bottom: 6vh;
 
     &Text {
       font-size: 1.3rem;
     }
+  }
+
+  &Buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
   }
 
   &Skills {

@@ -1,6 +1,6 @@
 import React from "react";
 import technoStyle from "./technoBox.module.scss"
-import {FaAngular, FaCss3, FaCss3Alt, FaDocker, FaGithub, FaHtml5, FaPhp, FaReact} from "react-icons/fa";
+import {FaAngular, FaCss3Alt, FaDocker, FaGithub, FaHtml5, FaPhp, FaReact} from "react-icons/fa";
 import {SiJavascript, SiTypescript} from "react-icons/si";
 
 interface TechnoBoxProps {
