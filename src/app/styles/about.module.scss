@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6vh;
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 4vw;
+  }
+
+  &Box {
+    background-image: var(--blue-gradient);
+    padding: 4vh 6vw;
+    border-radius: 50px 50px 4px 50px;
+
+    &Text {
+      font-size: 1.3rem;
+    }
+  }
+
+  &Skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 3rem;
+  }
+}

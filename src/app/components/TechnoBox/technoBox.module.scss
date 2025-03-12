@@ -1,0 +1,17 @@
+.box {
+  padding: 1vw;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--secondary-orange);
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  p::first-letter {
+    text-transform: uppercase;
+  }
+}

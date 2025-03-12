@@ -9,12 +9,14 @@
 
 .presentation {
   display: flex;
-  //flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  //padding: 58px 40px 60px 40px;
   padding: 6vh 2vw;
   gap: 5.5vh;
+
+  &Image {
+    max-width: 30%;
+  }
 
   &Text {
     &Main {
