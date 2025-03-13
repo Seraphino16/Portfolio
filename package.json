@@ -10,6 +10,7 @@
     "lint:commit": "commitlint --from=HEAD~1"
   },
   "dependencies": {
+    "feather-icons-react": "^0.8.1",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-devicons": "^2.16.2",

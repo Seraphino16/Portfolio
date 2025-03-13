@@ -40,7 +40,7 @@ const projects: ProjectInterface[] = [
 
 const ProjectSection = () => {
     return (
-        <section className={style.section}>
+        <section id={'projects'} className={style.section}>
             <div className={projectSection.container}>
                 <h2>Mes projets</h2>
                 <div className={projectSection.containerCardBox}>

@@ -3,10 +3,11 @@ import styles from "../../styles/page.module.scss";
 import hero from "../../styles/hero.module.scss"
 import Image from "next/image";
 import CustomButton from "@/app/components/CustomButton/CustomButton";
+import Link from "next/link";
 
 const HeroSection = () => {
     return (
-        <div className={styles.section}>
+        <section id={'hero'} className={styles.section}>
             <h1 className={hero.title}>Bienvenue sur mon Portfolio</h1>
             <div className={hero.presentation}>
                 <div className={hero.presentationImage}>
@@ -25,18 +26,22 @@ const HeroSection = () => {
                 </div>
             </div>
             <div className={hero.buttons}>
-                <CustomButton
-                    text={'À propos de moi'}
-                    icon={'/icons/User_02.svg'}
-                    alt={'User icon'}
-                    type={'gradient'}
-                />
-                <CustomButton
-                    text={'Contactez moi'}
-                    icon={'/icons/mail.svg'}
-                    alt={'E-mail icon'}
-                    type={'gradient'}
-                />
+                <Link href={'#about'}>
+                    <CustomButton
+                        text={'À propos de moi'}
+                        icon={'/icons/User_02.svg'}
+                        alt={'User icon'}
+                        type={'gradient'}
+                    />
+                </Link>
+                <Link href={'#form'}>
+                    <CustomButton
+                        text={'Contactez moi'}
+                        icon={'/icons/mail.svg'}
+                        alt={'E-mail icon'}
+                        type={'gradient'}
+                    />
+                </Link>
             </div>
             <div className={hero.chevrons}>
                 <Image
@@ -60,7 +65,7 @@ const HeroSection = () => {
                     height={40}
                 />
             </div>
-        </div>
+        </section>
     )
 }
 

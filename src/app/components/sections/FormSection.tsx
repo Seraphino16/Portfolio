@@ -1,15 +1,14 @@
 import React from 'react';
 import style from '../../styles/page.module.scss';
 import form from '../../styles/form.module.scss';
-import CustomButton from "@/app/components/CustomButton/CustomButton";
 
 const FormSection = () => {
     return (
-        <section className={style.section}>
+        <section id={'form'} className={style.section}>
             <div className={form.container}>
                 <h2>Contactez moi !</h2>
-                <div className={form.form}>
-                    <form>
+                {/*<div className={form.form}>*/}
+                    <form className={form.form}>
                         <div className={form.formGroup}>
                             <label htmlFor="name">Votre nom :</label>
                             <input type="text" id="name" name="name" placeholder='John Doe' />
@@ -24,7 +23,7 @@ const FormSection = () => {
                         </div>
                         <input type="submit" value="Envoyer !" />
                     </form>
-                </div>
+                {/*</div>*/}
             </div>
         </section>
     )

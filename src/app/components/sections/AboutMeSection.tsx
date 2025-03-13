@@ -19,7 +19,7 @@ const AboutMeSection = () => {
     ];
 
     return (
-        <div className={styles.section}>
+        <section id={'about'} className={styles.section}>
             <div className={aboutSection.container}>
                 <h2>About me</h2>
                 <div className={aboutSection.containerBox}>
@@ -46,7 +46,7 @@ const AboutMeSection = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
