@@ -3,6 +3,10 @@
   top: 50%;
   transform: translate(0, -50%);
   right: 2vw;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
 .navbar::before {
@@ -27,6 +31,7 @@
   justify-content: space-evenly;
   border-radius: var(--radius);
   gap: 1vh;
+  transition: opacity 0.3s;
 
   &Item {
     padding: 2vh 1.5vh;
@@ -40,6 +45,16 @@
     background-image: var(--orange-gradient);
     border-radius: var(--radius);
   }
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (max-width: 800px) {
