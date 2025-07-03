@@ -7,30 +7,40 @@ import {Home, Mail, Terminal, User} from "feather-icons-react";
 
 const Navbar: React.FC = () => {
 
-    const [activeLink, setActiveLink] = useState('hero');
+    const [activeLink, setActiveLink] = useState<string | null>('hero');
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
     const [clicked, setClicked] = useState(false);
     const [isScrolling, setIsScrolling] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const sections = document.querySelectorAll('section');
-            let currentSection = '';
-            sections.forEach((section) => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 0 && rect.bottom >= 0) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-            setActiveLink(currentSection);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveLink(entry.target.getAttribute('id'));
+                    }
+                });
+            },
+            {
+                rootMargin: '-50% 0px -50% 0px',
+            }
+        );
 
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
             if (clicked || isScrolling) {
                 setIsVisible(true);
                 return;
             }
 
-            console.log(clicked);
             const currentScrollY = window.scrollY;
             if (currentScrollY > lastScrollY && !clicked) {
                 setIsVisible(false);
@@ -38,13 +48,12 @@ const Navbar: React.FC = () => {
                 setIsVisible(true);
             }
             setLastScrollY(currentScrollY);
-
         };
 
         window.addEventListener('scroll', handleScroll);
 
         return () => window.removeEventListener('scroll', handleScroll);
-    });
+    }, [clicked, isScrolling, lastScrollY]);
 
     const handleClicked = () => {
         setClicked(true);
