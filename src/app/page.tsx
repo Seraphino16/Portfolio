@@ -7,12 +7,12 @@ import Navbar from "@/app/components/navbar/Navbar";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-        <Navbar />
-        <HeroSection />
-        <AboutMeSection />
-        <ProjectSection />
-        <FormSection />
-    </div>
+        <div className={styles.page}>
+            <Navbar />
+            <HeroSection />
+            <AboutMeSection />
+            <ProjectSection />
+            <FormSection />
+        </div>
   );
 }

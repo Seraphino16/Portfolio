@@ -3,7 +3,7 @@
 import React, {useEffect, useState} from 'react';
 import navbar from './navbar.module.scss';
 import Link from "next/link";
-import {Home, Mail, Terminal, User} from "feather-icons-react";
+import {Home, Mail, Terminal, User} from "react-feather";
 
 const Navbar: React.FC = () => {
 
