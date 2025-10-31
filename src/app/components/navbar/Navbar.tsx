@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
             }
 
             const currentScrollY = window.scrollY;
-            if (currentScrollY > lastScrollY && !clicked) {
+            if (currentScrollY > lastScrollY && !clicked && window.innerWidth < 800) {
                 setIsVisible(false);
             } else {
                 setIsVisible(true);
