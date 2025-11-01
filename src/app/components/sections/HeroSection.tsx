@@ -21,8 +21,7 @@ const HeroSection = () => {
                 </div>
                 <div className={hero.presentationText}>
                     <p className={hero.presentationTextMain}>Je m&#39;appelle <span className={hero.presentationTextMainName}>Séraphin Benoit</span></p>
-                    <p className={hero.presentationTextDescription}>Lorem ipsum dolor sit amet consectetur. Neque scelerisque turpis ornare faucibus id.
-                        Interdum facixdlisis cras malesuada tincidunt dolor morbi lacus.</p>
+                    <p className={hero.presentationTextDescription}>Développeur web passionné par la résolution de problèmes, du front-end au back-end.  Actuellement en alternance, toujours curieux d&#39;explorer de nouvelles technologies.</p>
                 </div>
             </div>
             <div className={hero.buttons}>

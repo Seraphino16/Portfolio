@@ -18,7 +18,9 @@
     margin-bottom: 6vh;
 
     &Text {
+      text-align: left;
       font-size: 1.3rem;
+      white-space: pre-line;
     }
   }
 

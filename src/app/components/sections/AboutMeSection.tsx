@@ -18,16 +18,21 @@ const AboutMeSection = () => {
         'github',
     ];
 
+    const descriptionText = "Je suis actuellement en formation à la Web@cadémie d'Epitech, en alternance chez Adeo, où j'ai développé une solide expertise en Angular et NestJS. Je reste ouvert à la découverte de nouveaux outils et frameworks.\n" +
+        "\n" +
+        "Ce qui me motive dans le développement, c'est la résolution de problèmes : comprendre un besoin utilisateur et construire une solution technique efficace. J'apprécie la dimension logique du code et la satisfaction de voir une fonctionnalité prendre vie.\n" +
+        "\n" +
+        "Mon alternance touchant bientôt à sa fin, je suis ouvert à de nouvelles opportunités qui me permettront de continuer à apprendre, idéalement dans des projets variés mêlant front-end et back-end.\n" +
+        "\n" +
+        "En dehors du code, je suis amateur de musique, d'escalade et de sorties culturelles. Autant d'activités qui" +
+        " nourrissent ma créativité et mon équilibre."
+
     return (
         <section id={'about'} className={styles.section}>
             <div className={aboutSection.container}>
                 <h2>About me</h2>
                 <div className={aboutSection.containerBox}>
-                    <p className={aboutSection.containerBoxText}>Lorem ipsum dolor sit amet consectetur. Vulputate morbi massa sed quis ultricies aliquet.
-                        Sit lorem nibh diam diam fusce neque eget volutpat. Fringilla cras sed amet laoreet.
-                        Lobortis nisl maecenas integer eros. Quis eu ornare ante lorem nunc egestas gravida fusce
-                        ultricies. Senectus nunc volutpat vulputate tincidunt consequat massa interdum tempor
-                        scelerisque. Nec duis eget ipsum faucibus feugiat iaculis dui ultrices.</p>
+                    <p className={aboutSection.containerBoxText}>{descriptionText}</p>
                 </div>
                 <div className={aboutSection.containerButtons}>
                     <CustomButton text={'Télécharger mon CV'} type={'gradient'} icon={'/icons/User_02.svg'} alt={'Icône téléchargement'} />
