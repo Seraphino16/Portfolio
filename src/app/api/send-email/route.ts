@@ -31,13 +31,13 @@ export async function POST(req: NextRequest) {
             template_params: formData,
         };
 
-        const responseEmail = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        const emailjsRes = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: { 'Content-Type': 'application/json' },
         });
 
-        const response = await responseEmail.text();
+        const response = await emailjsRes.text();
         return NextResponse.json({ success: true, result: response });
 
     } catch (err) {
