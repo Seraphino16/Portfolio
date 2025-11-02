@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import styles from "../../styles/page.module.scss";
 import aboutSection from "../../styles/about.module.scss";
@@ -27,6 +29,25 @@ const AboutMeSection = () => {
         "En dehors du code, je suis amateur de musique, d'escalade et de sorties culturelles. Autant d'activités qui" +
         " nourrissent ma créativité et mon équilibre."
 
+
+    const handleDownloadCV = async () => {
+        const response = await fetch('/api/download-cv', {
+            method: 'GET',
+        });
+
+        if (response.status !== 200) {
+            console.error(response.status, response.statusText);
+        }
+
+        const blob = await response.blob();
+        const url = globalThis.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'cv';
+        link.click();
+        globalThis.URL.revokeObjectURL(url);
+    }
+
     return (
         <section id={'about'} className={styles.section}>
             <div className={aboutSection.container}>
@@ -35,10 +56,12 @@ const AboutMeSection = () => {
                     <p className={aboutSection.containerBoxText}>{descriptionText}</p>
                 </div>
                 <div className={aboutSection.containerButtons}>
-                    <CustomButton text={'Télécharger mon CV'} type={'gradient'} icon={'/icons/User_02.svg'} alt={'Icône téléchargement'} />
+                    <CustomButton text={'Télécharger mon CV'} customClickEvent={handleDownloadCV} type={'gradient'} icon={'/icons/User_02.svg'} alt={'Icône téléchargement'} />
                     <div className={aboutSection.containerButtons}>
-                        <CustomButton text={'Github'} type={'gray'} icon={'/icons/User_02.svg'} alt={'Icône Github'} />
-                        <CustomButton text={'LinkedIn'} type={'gray'} icon={'/icons/User_02.svg'} alt={'Icône LinkedIn'} />
+                        <CustomButton text={'Github'} link={'https://github.com/Seraphino16'} type={'gray'} icon={'/icons/User_02.svg'} alt={'Icône' +
+                            ' Github'} />
+                        <CustomButton text={'LinkedIn'} link={'https://www.linkedin.com/in/s%C3%A9raphin-benoit-142374267/'} type={'gray'} icon={'/icons/User_02.svg'} alt={'Icône' +
+                            ' LinkedIn'} />
                     </div>
 
                 </div>

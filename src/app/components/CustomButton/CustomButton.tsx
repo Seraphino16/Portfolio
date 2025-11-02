@@ -7,13 +7,24 @@ interface CustomButtonProps {
     type: string;
     icon: string;
     alt: string;
+    link?: string
+    customClickEvent?: () => void;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ text, type, icon, alt}) => {
+const CustomButton: React.FC<CustomButtonProps> = ({ text, type, icon, alt, link, customClickEvent }) => {
     return (
-        <div className={`${button.button} ${type === 'gradient' ? button.buttonGradient : button.buttonGray}`}>
-            <Image src={icon} alt={alt} width={24} height={24} />
-            <p className={button.buttonText}>{ text }</p>
+        <div>
+            {link ? (
+                <a href={link} target='_blank' className={`${button.button} ${type === 'gradient' ? button.buttonGradient : button.buttonGray}`}>
+                    <Image src={icon} alt={alt} width={24} height={24} />
+                    <p className={button.buttonText}>{ text }</p>
+                </a>
+            ) : (
+                <div onClick={customClickEvent} onKeyDown={customClickEvent} className={`${button.button} ${type === 'gradient' ? button.buttonGradient : button.buttonGray}`}>
+                    <Image src={icon} alt={alt} width={24} height={24} />
+                    <p className={button.buttonText}>{ text }</p>
+                </div>
+                )}
         </div>
     )
 }
