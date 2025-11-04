@@ -52,10 +52,11 @@
 
 .close {
   position: sticky;
-  float: right;
   top: 1.5rem;
   right: 1.5rem;
-  z-index: 1000 !important;
+  margin-left: auto;
+  margin-bottom: -2.5rem;
+  z-index: 1000;
   background: rgba(204, 204, 204, 0.55);
   border: none;
   font-size: 2rem;
@@ -63,7 +64,7 @@
   color: #666;
   width: 2.5rem;
   height: 2.5rem;
-  display: inline-block;
+  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 4px;

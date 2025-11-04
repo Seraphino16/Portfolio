@@ -14,7 +14,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
         <div className={modalStyle.overlay} onClick={onClose}>
             <div className={modalStyle.content} onClick={(e) => e.stopPropagation()}>
                 <button className={modalStyle.close} onClick={onClose}>×</button>
-
                 {project.image && (
                     <img
                         src={project.image}
