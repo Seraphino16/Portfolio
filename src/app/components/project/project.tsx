@@ -2,7 +2,6 @@ import React from 'react';
 import projectStyle from './project.module.scss';
 import Image from "next/image";
 import {ProjectInterface} from "@/app/components/sections/ProjectSection";
-import {FaLongArrowAltRight} from "react-icons/fa";
 
 interface ProjectProps {
     project: ProjectInterface,

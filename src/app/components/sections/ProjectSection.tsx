@@ -33,13 +33,41 @@ const ProjectSection = () => {
     );
 
     const openModal = (project: ProjectInterface) => {
+        const scrollY = window.scrollY;
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        const navbar = document.getElementById('navbar');
+
+        if (navbar) {
+            navbar.style.paddingRight = `${scrollbarWidth}px`;
+        }
+
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+
         setSelectedProject(project);
-        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
         setSelectedProject(null);
-        document.body.style.overflow = 'unset';
+
+        const scrollY = document.body.style.top;
+        const navbar = document.getElementById('navbar');
+
+        if (navbar) {
+            navbar.style.paddingRight = '';
+        }
+
+        document.body.style.paddingRight = '';
+        document.documentElement.style.scrollBehavior = 'auto';
+        document.body.style.top = '';
+        document.body.style.position = '';
+        window.scrollTo(0, Number.parseInt(scrollY || '0', 10) * -1);
+
+        requestAnimationFrame(() => {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        });
     };
 
     return (

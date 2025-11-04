@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
     }
 
     return (
-        <div className={`${navbar['container']} ${isVisible ? navbar['visible'] : navbar['hidden']}`}>
+        <div id={'navbar'} className={`${navbar['container']} ${isVisible ? navbar['visible'] : navbar['hidden']}`}>
             <nav className={`${navbar['navbar']} ${isVisible ? navbar['visible'] : navbar['hidden']}`}>
                 <Link onClick={handleClicked} href={'#hero'} className={activeLink === 'hero' ? navbar.navbarActive : ''}>
                     <div className={navbar.navbarItem}>
