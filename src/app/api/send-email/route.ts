@@ -8,19 +8,19 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ success: false, message: 'Missing data or token' }, { status: 400 });
         }
 
-        const verifyRecaptcha = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+        const verifyHCaptcha = await fetch('https://hcaptcha.com/siteverify', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({
-                secret: process.env.RECAPTCHA_SECRET_KEY!,
+                secret: process.env.HCAPTCHA_SECRET_KEY!,
                 response: token,
             }),
         });
 
-        const recaptchaRes = await verifyRecaptcha.json();
+        const hCaptchaRes = await verifyHCaptcha.json();
 
-        if (!recaptchaRes.success || recaptchaRes.score < 0.5) {
-            return NextResponse.json({ success: false, message: 'reCAPTCHA failed' }, { status: 403 });
+        if (!hCaptchaRes.success || hCaptchaRes.score < 0.5) {
+            return NextResponse.json({ success: false, message: 'Invalid Captcha' }, { status: 403 });
         }
 
         const payload = {

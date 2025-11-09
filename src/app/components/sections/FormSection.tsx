@@ -1,17 +1,18 @@
 'use client'
 
 import React, {FormEvent} from 'react';
-import {GoogleReCaptchaProvider, useGoogleReCaptcha} from "@google-recaptcha/react";
 
 import style from '../../styles/page.module.scss';
 import form from '../../styles/form.module.scss';
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const Form = () => {
 
-    const [formMessage, setFormMessage] = React.useState<string | null>(null)
+    const [formMessage, setFormMessage] = React.useState<string | null>(null);
+    const [captchaToken, setCaptchaToken] = React.useState<string | null>(null);
 
-    const googleRecaptcha = useGoogleReCaptcha();
     const formRef = React.useRef<HTMLFormElement>(null);
+    const captchaRef = React.useRef<HCaptcha>(null);
 
     const checkData = (formData: {[key: string] : string}): boolean => {
         let { name, email, message } = formData;
@@ -43,23 +44,31 @@ const Form = () => {
         return true;
     }
 
+    const handleCaptchaVerify = (token: string) => {
+        setCaptchaToken(token);
+    }
+
     const onSubmit = async (event: FormEvent): Promise<void> => {
         event.preventDefault();
 
         setFormMessage(null);
 
-        if (!googleRecaptcha?.executeV3 || !formRef.current) {
+        if (!formRef.current) {
             return;
         }
 
-        const token = await googleRecaptcha.executeV3('contact_form');
+        if (!captchaToken) {
+            setFormMessage('Veuillez compléter le captcha');
+            return;
+        }
+
         const formData = Object.fromEntries(new FormData(formRef.current).entries());
 
         if (!checkData(formData as { [key: string]: string })) return;
 
         const res = await fetch('/api/send-email', {
             method: 'POST',
-            body: JSON.stringify({ formData, token }),
+            body: JSON.stringify({ formData, token: captchaToken }),
             headers: {'Content-Type': 'application/json'},
         })
 
@@ -67,12 +76,16 @@ const Form = () => {
 
         if (response.success === true) {
             formRef.current.reset();
+            setCaptchaToken(null);
+            captchaRef.current?.resetCaptcha();
             setFormMessage('Merci pour votre message !');
+            setTimeout(() => {
+                setFormMessage(null);
+            }, 5000);
         } else {
             setFormMessage('Une erreur est survenue : vous pouvez réessayer ou me contacter directement à l\'adresse' +
                 ' seraphinbnt@gmail.com');
         }
-        console.log('Résultat serveur email:', response);
     }
 
     return (
@@ -92,6 +105,14 @@ const Form = () => {
                         <label htmlFor="message">Votre message :</label>
                         <textarea id="message" name="message" placeholder='Écrivez votre message ici...'/>
                     </div>
+                    <div className={form.formGroup}>
+                        <HCaptcha
+                            ref={captchaRef}
+                            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY as string}
+                            onVerify={handleCaptchaVerify}
+                            languageOverride={'fr'}
+                        />
+                    </div>
                     {formMessage && (
                         <p className={form.formalert}>{formMessage}</p>
                     )}
@@ -104,9 +125,7 @@ const Form = () => {
 
 const FormSection = () => {
     return (
-        <GoogleReCaptchaProvider type="v3" siteKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}>
             <Form />
-        </GoogleReCaptchaProvider>
     )
 }
 
