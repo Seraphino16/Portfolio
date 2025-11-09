@@ -51,7 +51,7 @@ const AboutMeSection = () => {
     return (
         <section id={'about'} className={styles.section}>
             <div className={aboutSection.container}>
-                <h2>About me</h2>
+                <h2>À propos de moi</h2>
                 <div className={aboutSection.containerBox}>
                     <p className={aboutSection.containerBoxText}>{descriptionText}</p>
                 </div>

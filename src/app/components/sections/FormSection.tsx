@@ -92,18 +92,34 @@ const Form = () => {
         <section id={'form'} className={style.section}>
             <div className={form.container}>
                 <h2>Contactez moi !</h2>
-                <form ref={formRef} className={form.form} onSubmit={onSubmit} id="contact-form">
+                <form
+                    ref={formRef}
+                    className={form.form}
+                    onSubmit={onSubmit}
+                    id="contact-form"
+                    aria-label="Formulaire de contact"
+                >
                     <div className={form.formGroup}>
                         <label htmlFor="name">Votre nom :</label>
-                        <input type="text" id="name" name="name" placeholder='John Doe' />
+                        <input type="text" id="name" name="name" placeholder='Nom' aria-required="true"/>
                     </div>
                     <div className={form.formGroup}>
                         <label htmlFor="email">Votre email :</label>
-                        <input type="email" id="email" name="email" placeholder='email@exemple.com'/>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder='email@exemple.com'
+                            aria-required="true"
+                        />
                     </div>
                     <div className={form.formGroup}>
                         <label htmlFor="message">Votre message :</label>
-                        <textarea id="message" name="message" placeholder='Écrivez votre message ici...'/>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder='Écrivez votre message ici...'
+                            aria-required="true"/>
                     </div>
                     <div className={form.formGroup}>
                         <HCaptcha
@@ -111,12 +127,16 @@ const Form = () => {
                             sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY as string}
                             onVerify={handleCaptchaVerify}
                             languageOverride={'fr'}
+                            aria-label="Vérification anti-spam"
                         />
                     </div>
                     {formMessage && (
                         <p className={form.formalert}>{formMessage}</p>
                     )}
-                    <input type="submit" value="Envoyer !" />
+                    <input type="submit" value="Envoyer !" aria-label="Envoyer le message"/>
+                    <p style={{fontSize: '0.85rem', color: '#3a3a3a', marginTop: '1rem', lineHeight: '1.4'}}>
+                        En envoyant ce message, vous acceptez que vos données soient utilisées pour vous recontacter.
+                    </p>
                 </form>
             </div>
         </section>
