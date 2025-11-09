@@ -135,9 +135,6 @@ const AboutMeSection = () => {
                     </button>
                 </div>
                 <div className={aboutSection.containerSkills}>
-                    <div className={aboutSection.containerSkills}>
-
-                    </div>
                     {filteredStack.map((tech, i) => (
                         <TechnoBox key={i} techno={tech} />
                     ))}
