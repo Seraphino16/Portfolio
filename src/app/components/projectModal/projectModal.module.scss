@@ -190,13 +190,13 @@
 }
 
 // Responsive
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .overlay {
     padding: 0.75rem;
   }
 
   .content {
-    max-height: 92vh;
+    max-height: 80vh;
     max-width: 95%;
     border-radius: 6px;
   }
