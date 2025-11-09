@@ -19,14 +19,18 @@
   }
 
   &Text {
+    text-align: justify;
+
     &Main {
       color: var(--primary-gray);
       font-size: 2.5rem;
       padding: 10px;
       margin-bottom: 10px;
+      text-align: left;
 
       &Name {
         font-size: 3rem;
+        display: inline-block;
       }
 
     }

@@ -122,13 +122,16 @@ const Form = () => {
                             aria-required="true"/>
                     </div>
                     <div className={form.formGroup}>
-                        <HCaptcha
-                            ref={captchaRef}
-                            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY as string}
-                            onVerify={handleCaptchaVerify}
-                            languageOverride={'fr'}
-                            aria-label="Vérification anti-spam"
-                        />
+                        <div className={form.formCaptchaWrapper}>
+                            <HCaptcha
+                                ref={captchaRef}
+                                sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY as string}
+                                onVerify={handleCaptchaVerify}
+                                languageOverride={'fr'}
+                                aria-label="Vérification anti-spam"
+                            />
+                        </div>
+
                     </div>
                     {formMessage && (
                         <p className={form.formalert}>{formMessage}</p>

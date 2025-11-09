@@ -13,8 +13,13 @@ import "./styles/globals.css";
 // });
 
 export const metadata: Metadata = {
-  title: "Séraphin Benoit",
-  description: "Ce portfolio est un aperçu de mon parcours académique au cours de ma formation en développement web.",
+    title: "Portfolio - Séraphin Benoit",
+    description: "Ce portfolio est un aperçu de mon parcours académique au cours de ma formation en développement web.",
+    applicationName: 'Portfolio - Séraphin Benoit',
+    authors: { name: 'Séraphin Benoit', url: 'https://seraphin-benoit.vercel.app/'},
+    keywords: ['portfolio', 'developpeur', 'web', 'développeur web', 'front-end', 'back-end',
+        'epitech', 'projets', 'angular', 'nestjs', 'nextjs', 'javascript', 'typescript',
+        'php', 'react', 'web@cademie', 'jira', 'git', 'github'],
 };
 
 export default function RootLayout({

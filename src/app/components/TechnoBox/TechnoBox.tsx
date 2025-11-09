@@ -1,7 +1,7 @@
 import React from "react";
 import technoStyle from "./technoBox.module.scss"
-import {FaAngular, FaCss3Alt, FaDocker, FaGithub, FaHtml5, FaPhp, FaReact} from "react-icons/fa";
-import {SiJavascript, SiTypescript} from "react-icons/si";
+import {FaAngular, FaCss3Alt, FaDocker, FaGit, FaGithub, FaHtml5, FaPhp, FaReact, FaSymfony} from "react-icons/fa";
+import {SiGit, SiJavascript, SiJira, SiNestjs, SiNextdotjs, SiTypescript} from "react-icons/si";
 
 interface TechnoBoxProps {
     techno: string
@@ -20,6 +20,11 @@ const TechnoBox: React.FC<TechnoBoxProps> = ({ techno }) => {
             case 'angular': return <FaAngular size={40} />
             case 'docker': return <FaDocker size={40} />
             case 'github': return <FaGithub size={40} />
+            case 'jira': return <SiJira size={40} />
+            case 'symphony': return <FaSymfony size={40} />
+            case 'nestJS': return <SiNestjs size={40} />
+            case 'nextJS': return <SiNextdotjs size={40} />
+            case 'git': return <SiGit size={40} />
         }
     }
 

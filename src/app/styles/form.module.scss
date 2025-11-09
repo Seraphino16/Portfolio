@@ -141,26 +141,34 @@
     width: 95%;
     padding: 2.5vh 5vw;
 
+    label {
+      font-size: 16px;
+    }
+
+    input, textarea {
+      font-size: 16px;
+    }
+
     &Group {
       margin-bottom: 1.5vh;
     }
 
-    label {
-      font-size: 1rem;
-    }
-
-    input, textarea {
-      font-size: 0.95rem;
-    }
-
     input[type='submit'] {
       padding: 1rem 2.5rem;
-      font-size: 1rem;
+      font-size: 16px;
       width: 100%;
     }
 
     textarea {
       height: 10vh;
+    }
+
+    &CaptchaWrapper {
+      display: flex;
+      justify-content: center;
+      transform: scale(0.8);
+      transform-origin: center;
+      width: 100%;
     }
   }
 }
