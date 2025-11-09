@@ -89,7 +89,7 @@ const Form = () => {
     }
 
     return (
-        <section id={'form'} className={style.section}>
+        <section id={'form'} className={style.section} style={{minHeight: "unset", marginBottom: "10vh"}}>
             <div className={form.container}>
                 <h2>Contactez moi !</h2>
                 <form
